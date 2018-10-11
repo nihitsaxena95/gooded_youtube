@@ -33,7 +33,10 @@ rl.question('Enter the code from that page here: ', function(code) {
     rl.close();
     Logger.log("Trying to get the token using the following code: " + code);
     oauth.getToken(code, (err, tokens) => {
- 
+        if(err) {
+          console.log(err);
+          reject(err);
+        } else {
         Logger.log("Got the tokens.");
  
         oauth.setCredentials(tokens);
@@ -58,6 +61,7 @@ rl.question('Enter the code from that page here: ', function(code) {
         }, (err, data) => {
           if(err) {
             console.log(err)
+            reject(err);
           } else {
             console.log("Done.", data);
               let a = {
@@ -69,7 +73,9 @@ rl.question('Enter the code from that page here: ', function(code) {
             resolve(a);
           }
         });
+    }
     });
+
 });
 });
 }

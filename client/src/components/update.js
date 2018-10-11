@@ -23,9 +23,13 @@ class Update extends React.Component {
 				description : this.state.description,
 				privacy : this.state.privacy
 			}
+		}).then(data =>{
+			window.alert("Uploaded Successfully");
+		}).catch(err => {
+			window.alert(err.message);
 		})
 		console.log(this.props);
-		window.alert("resource updated successfully");
+		window.alert("Paste auth token to server window to update");
 
 	}
 

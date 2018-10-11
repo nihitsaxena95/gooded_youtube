@@ -35,6 +35,10 @@ rl.question('Enter the code from that page here: ', function(code) {
     Logger.log("Trying to get the token using the following code: " + code);
     oauth.getToken(code, (err, tokens) => {
         Logger.log("Got the tokens.");
+        if(err) {
+          console.log(err);
+          reject(err);
+        } else {
         oauth.setCredentials(tokens);
         Logger.log("The video is being uploaded. Check out the logs in the terminal.");
         var req = Youtube.videos.update({
@@ -66,6 +70,7 @@ rl.question('Enter the code from that page here: ', function(code) {
             resolve(a);
             }
         });
+    }
     });
 });
 });

@@ -46,7 +46,7 @@ const videoMutation = new GraphQLObjectType({
 				path : {type : GraphQLString}
 			},
 			resolve(parent, args) {
-				return insertVideoService(args.id,args.description, args.privacy, args.path).then((data)=>data);
+				return insertVideoService(args.id,args.description, args.privacy, args.path).then((data)=>data).catch((err)=>err);
 			}
 		},
 		updateVideo : {
@@ -59,7 +59,7 @@ const videoMutation = new GraphQLObjectType({
 				
 			},
 			resolve(parent, args) {
-				return updateVideoService(args.id, args.title, args.description,args.privacy).then((data) => data);
+				return updateVideoService(args.id, args.title, args.description,args.privacy).then((data) => data).catch((err)=>err);
 			}
 		}
 	}

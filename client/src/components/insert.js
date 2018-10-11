@@ -14,24 +14,21 @@ class Insert extends React.Component {
 	}
 	submit(e) {
 		e.preventDefault();
-		// console.log(this.state);
-		// console.log(this.pathh.files[0]);
-		// let r = new FileReader();
-		// r.readAsDataURL(this.pathh.files[0])
-		// r.onload=(e)=> {
-			//console.log(e.target.result);
-			this.props.addVideo({
+	
+		this.props.addVideo({
 			variables : {
 				path : this.state.path,
 				title : this.state.title,
 				description : this.state.description,
 				privacy : this.state.privacy
 			}
-		//})
+		}).then(data =>{
+			window.alert("Uploaded Successfully");
+		}).catch(err => {
+			window.alert(err.message);
 		})
 		
-		// console.log(this.props);
-		window.alert("resource added successfully");
+		window.alert("Paste auth token to server window to add");
 
 	}
 	render() {
