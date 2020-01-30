@@ -1,0 +1,4 @@
+<context>
+<pattern>What is your NAME</pattern>
+<template>My name is $('QUERY_RESULT')</template>
+</context>
