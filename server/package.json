@@ -12,12 +12,12 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "body-parser": "^1.16.1",
+    "body-parser": "^1.20.1",
     "bug-killer": "^4.4.4",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "debug": "^3.0.0",
-    "express": "^4.15.4",
+    "express": "^4.18.2",
     "express-graphql": "^0.6.12",
     "fs": "0.0.1-security",
     "graphql": "^14.0.2",
@@ -29,7 +29,7 @@
     "r-json": "^1.2.8",
     "readline": "^1.3.0",
     "serve-favicon": "^2.4.3",
-    "youtube-api": "^2.0.9"
+    "youtube-api": "^3.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
